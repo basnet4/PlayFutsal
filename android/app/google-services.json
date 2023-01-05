@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "843067428549",
+    "project_id": "playfutsal-3c287",
+    "storage_bucket": "playfutsal-3c287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843067428549:android:e41fe2ad0d5bd717676aac",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843067428549-gqgo56mstfsubnhvr5rb8el1j4a0btf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZva6ojhZcLZLpuEjeYPN82cuptVatFUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843067428549-gqgo56mstfsubnhvr5rb8el1j4a0btf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
