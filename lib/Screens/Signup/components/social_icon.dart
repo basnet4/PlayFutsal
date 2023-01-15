@@ -17,10 +17,10 @@ class SocalIcon extends StatelessWidget {
       onTap: press as void Function()?,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           border: Border.all(
-            width: 2,
+            width: 1,
             color: kPrimaryLightColor,
           ),
           shape: BoxShape.circle,

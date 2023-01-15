@@ -5,11 +5,12 @@ import '../../constants.dart';
 import '../../main.dart';
 import '../Login/login_screen.dart';
 import '../Signup/signup_screen.dart';
+import 'dashboard.dart';
 
 void main() => runApp(const MyApp());
 
-class DashboardPage extends StatelessWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class DashboardReturn extends StatelessWidget {
+  const DashboardReturn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class DashboardPage extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            child: Image.asset('assets/images/dashboard_top.png'),
+            child: Image.asset('assets/images/dashboard_return.png'),
           ),
           Positioned(
             // Use Positioned widget to place the button at the bottom of the page
@@ -33,49 +34,49 @@ class DashboardPage extends StatelessWidget {
                 onPressed: () async {
                   // Show the dialog with the CircularProgressIndicator
                   showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      content: SizedBox(
-                        height: 70,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            CircularProgressIndicator(),
-                            SizedBox(height: 15),
-                            Text("Matching..."),
-                          ],
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        content: SizedBox(
+                          height: 70,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              CircularProgressIndicator(),
+                              SizedBox(height: 15),
+                              Text("Matching..."),
+                            ],
+                          ),
                         ),
-                      ),
-                      actions: [
-                        InkWell(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                "Cancel",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
+                        actions: [
+                          InkWell(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                  ),
                                 ),
                               ),
                             ),
+                            onTap: () {
+                              Navigator.pop(context); // Close the dialog
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DashboardReturn(),
+                                ),
+                              );
+                            },
                           ),
-                          onTap: () {
-                            Navigator.pop(context); // Close the dialog
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const DashboardPage(),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
-                    )
+                        ],
+                      )
                   );
                   // Perform some async operation
                   await Future.delayed(Duration(seconds: 10));
@@ -91,14 +92,14 @@ class DashboardPage extends StatelessWidget {
                 child: const Text(
                   "Start",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 25,
                   ),
                 ),
               ),
             ),
           ),
           Positioned(
-            top: 60,
+            top: 48,
             right: 16,
             child: CircleAvatar(
               backgroundColor: Colors.transparent,
@@ -162,7 +163,26 @@ class DashboardPage extends StatelessWidget {
                 child: Image.asset('assets/images/exit.png'),
               ),
             ),
-          )
+          ),
+          // Positioned(
+          //   bottom: 30,
+          //   right: 168,
+          //   child: Container(
+          //     height: 75,
+          //     width: 75,
+          //     child: InkWell(
+          //       onTap: () {
+          //         Navigator.push(
+          //           context,
+          //           MaterialPageRoute(
+          //             builder: (context) => const DashboardPage(),
+          //           ),
+          //         );
+          //       },
+          //       child: Image.asset('assets/images/bravo_team.png'),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

@@ -44,13 +44,39 @@ class SignUpForm extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding / 2),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
+              // Show the dialog with the CircularProgressIndicator
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Center(child: CircularProgressIndicator()),
+                  content: Text('Please Wait!'),
+                ),
+              );
+
+              // Perform some async operation
+              await Future.delayed(const Duration(seconds: 3));
+
+              // Close the dialog
+              Navigator.pop(context);
+
+              // Show the success alert dialog
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Text('Success'),
+                  content: Text('Successfully registered'),
+                ),
+              );
+
+              // Perform some async operation
+              await Future.delayed(const Duration(seconds: 1));
+
+              // Navigate to the OnePage
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) {
-                    return const LoginScreen();
-                  },
+                  builder: (context) => const LoginScreen(),
                 ),
               );
             },
